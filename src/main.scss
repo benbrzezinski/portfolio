@@ -1,0 +1,62 @@
+@use "./scss/index.scss" as *;
+@import "../node_modules/modern-normalize/modern-normalize.css";
+
+#root {
+  display: contents;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-main), "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--fs-main);
+  font-weight: var(--fw-main);
+  color: var(--cl-main);
+  background-color: var(--bg-main);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
