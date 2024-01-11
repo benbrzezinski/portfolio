@@ -1,0 +1,54 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  @include max-width(1100px) {
+    flex-direction: column;
+  }
+}
+
+.titleBox {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: clamp(2rem, 1.1667rem + 4.1667vw, 3.25rem);
+  line-height: 1.4;
+}
+
+.text {
+  font-size: clamp(0.75rem, 0.5833rem + 0.8333vw, 1rem);
+}
+
+.link {
+  font-family: var(--ff-sec);
+  color: var(--cl-sec);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+.profileImg {
+  width: 480px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 42%;
+  border-radius: 50%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}

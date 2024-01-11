@@ -1,10 +1,21 @@
 :root {
-  --cl-main: #fff;
-  --bg-main: #242424;
+  --cl-main: #323743;
+  --cl-sec: #8aaae5;
+  --bg-main: #fff;
 
-  --ff-main: "";
+  --ff-main: "Sarabun";
+  --ff-sec: "Open Sans";
+
   --fs-main: 16px;
+  --fs-sec: 14px;
+
   --fw-main: 400;
+  --fw-sec: 700;
+
+  --lh-main: 1.6;
+
+  --br-main: 8px;
+  --br-sec: 16px;
 
   --duration: 250ms;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);

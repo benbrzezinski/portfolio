@@ -1,0 +1,77 @@
+@use "../../scss/index.scss" as *;
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  @extend %glass;
+  border-radius: var(--br-sec);
+  padding: 25px;
+
+  @include max-width(1100px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.projectInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 50px;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.subtitle {
+  font-family: var(--ff-sec);
+  color: var(--cl-sec);
+}
+
+.name {
+  font-weight: var(--fw-sec);
+  font-size: 32px;
+}
+
+.toolsBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.screenshot {
+  width: 600px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--br-main);
+}
+
+.linkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: var(--cl-main);
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+  }
+}

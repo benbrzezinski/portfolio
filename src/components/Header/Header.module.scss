@@ -1,0 +1,53 @@
+@use "../../scss/index.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  border-bottom-left-radius: var(--br-sec);
+  border-bottom-right-radius: var(--br-sec);
+  padding-block: 10px;
+  padding-inline: 15px;
+  @extend %glass;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.navLink {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-sec);
+  font-size: var(--fs-sec);
+  color: var(--cl-main);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid var(--cl-main);
+  transition-property: color, border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+    border-color: var(--cl-sec);
+  }
+
+  &.active {
+    color: var(--cl-sec);
+    border-color: var(--cl-sec);
+  }
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+}
