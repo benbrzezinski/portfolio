@@ -1,11 +1,27 @@
 import { IconContext } from "react-icons";
 import { CgWebsite } from "react-icons/cg";
-import { FaPersonRunning, FaReact } from "react-icons/fa6";
+import {
+  FaPersonRunning,
+  FaReact,
+  FaSass,
+  FaHtml5,
+  FaNodeJs,
+  FaDatabase,
+} from "react-icons/fa6";
 import { FaHome, FaCode } from "react-icons/fa";
-import { IoCodeWorking } from "react-icons/io5";
+import { IoCodeWorking, IoLogoCss3 } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdPhone } from "react-icons/md";
-import { SiVite, SiTypescript } from "react-icons/si";
+import {
+  SiVite,
+  SiTypescript,
+  SiRedux,
+  SiJavascript,
+  SiExpress,
+  SiMongodb,
+  SiMongoose,
+  SiSwagger,
+} from "react-icons/si";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -57,15 +73,81 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Typescript = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiTypescript />
+    </IconContext.Provider>
+  );
+
   const React = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <FaReact />
     </IconContext.Provider>
   );
 
-  const Typescript = ({ className }: IconClass) => (
+  const Redux = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <SiTypescript />
+      <SiRedux />
+    </IconContext.Provider>
+  );
+
+  const Javascript = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiJavascript />
+    </IconContext.Provider>
+  );
+
+  const Sass = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaSass />
+    </IconContext.Provider>
+  );
+
+  const HTML = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaHtml5 />
+    </IconContext.Provider>
+  );
+
+  const CSS = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <IoLogoCss3 />
+    </IconContext.Provider>
+  );
+
+  const NodeJs = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaNodeJs />
+    </IconContext.Provider>
+  );
+
+  const Express = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiExpress />
+    </IconContext.Provider>
+  );
+
+  const Mongodb = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiMongodb />
+    </IconContext.Provider>
+  );
+
+  const Mongoose = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiMongoose />
+    </IconContext.Provider>
+  );
+
+  const Swagger = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiSwagger />
+    </IconContext.Provider>
+  );
+
+  const Database = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaDatabase />
     </IconContext.Provider>
   );
 
@@ -78,8 +160,19 @@ const useIcons = () => {
     Website,
     Code,
     Vite,
-    React,
     Typescript,
+    React,
+    Redux,
+    Javascript,
+    Sass,
+    HTML,
+    CSS,
+    NodeJs,
+    Express,
+    Mongodb,
+    Mongoose,
+    Swagger,
+    Database,
   };
 };
 

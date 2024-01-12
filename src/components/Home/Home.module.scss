@@ -14,14 +14,15 @@
 }
 
 .titleBox {
-  max-width: 460px;
+  max-width: 470px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .title {
-  font-size: clamp(2rem, 1.1667rem + 4.1667vw, 3.25rem);
+  font-weight: var(--fw-sec);
+  font-size: clamp(1.875rem, 1.0417rem + 4.1667vw, 3.125rem);
   line-height: 1.4;
 }
 

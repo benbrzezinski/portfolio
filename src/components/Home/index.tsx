@@ -21,8 +21,8 @@ const Home = () => {
             "Ehh, whatever",
             1000,
           ]}
-          wrapper="span"
-          speed={50}
+          wrapper="h1"
+          speed={25}
           repeat={Infinity}
         />
         <p className={scss.text}>

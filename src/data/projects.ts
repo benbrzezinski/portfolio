@@ -11,6 +11,27 @@ const projects = [
     website: "https://darling-delights.netlify.app",
     code: "https://github.com/benbrzezinski/darling-delights",
   },
+  {
+    id: nanoid(),
+    subtitle: "Finance Management App",
+    name: "Wallet",
+    description:
+      "Navigate your financial journey effortlessly with our user-friendly finance management app. From budgeting to investing, discover a curated suite of tools designed for modern financial style. Simplify your fiscal life with precision and passion, ensuring every financial decision is a step towards your goals",
+    screenshot: "/assets/images/wallet.jpg",
+    website: "https://mateuszcharysz.github.io/Goit-Wallet/",
+    code: "https://github.com/MateuszCharysz/Goit-Wallet",
+  },
+  {
+    id: nanoid(),
+    subtitle: "Ice Cream Shop",
+    name: "Ice Cream",
+    description:
+      "Step into the world of joy with our ice cream shop! We've crafted a delightful space where every visit is a journey into happiness. Explore a variety of flavors, from timeless classics to exciting creations that spark delight. Our carefully selected range captures the essence of pleasure",
+    screenshot: "/assets/images/ice-cream.jpg",
+    website:
+      "https://barteknr1.github.io/Ice-Cream-made-with-Passion/#about-us",
+    code: "https://github.com/barteknr1/Ice-Cream-made-with-Passion",
+  },
 ];
 
 export default projects;
