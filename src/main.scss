@@ -1,5 +1,9 @@
 @use "./scss/index.scss" as *;
 @import "../node_modules/modern-normalize/modern-normalize.css";
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
+@import "yet-another-react-lightbox/styles.css";
+@import "yet-another-react-lightbox/plugins/counter.css";
+@import "yet-another-react-lightbox/plugins/thumbnails.css";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Sarabun:wght@400;700&display=swap");
 
 .container {
@@ -74,4 +78,41 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   appearance: textfield;
+}
+
+button.control-prev {
+  border-top-left-radius: var(--br-main);
+  border-bottom-left-radius: var(--br-main);
+
+  &::before {
+    border-right-color: var(--cl-main) !important;
+  }
+}
+
+button.control-next {
+  border-top-right-radius: var(--br-main);
+  border-bottom-right-radius: var(--br-main);
+
+  &::before {
+    border-left-color: var(--cl-main) !important;
+  }
+}
+
+p.carousel-status {
+  font-weight: var(--fw-sec);
+  color: var(--cl-main) !important;
+  text-shadow: none !important;
+}
+
+li.thumb {
+  border-width: 2px !important;
+  border-radius: var(--br-main);
+
+  &:hover {
+    border-color: var(--cl-main) !important;
+  }
+
+  &.selected {
+    border-color: var(--cl-main) !important;
+  }
 }

@@ -8,9 +8,10 @@
   z-index: 100;
   border-bottom-left-radius: var(--br-sec);
   border-bottom-right-radius: var(--br-sec);
+  @extend %glass;
+  border-top-width: 0;
   padding-block: 10px;
   padding-inline: 15px;
-  @extend %glass;
 }
 
 .navList {

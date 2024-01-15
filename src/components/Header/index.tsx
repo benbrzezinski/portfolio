@@ -17,7 +17,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-100}
+              offset={-150}
             >
               <Home className={scss.icon} />
             </Link>
@@ -30,7 +30,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-100}
+              offset={-150}
             >
               <Works className={scss.icon} />
             </Link>
@@ -43,7 +43,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-100}
+              offset={-150}
             >
               <Person className={scss.icon} />
             </Link>
@@ -56,7 +56,7 @@ const Header = () => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-100}
+              offset={-150}
             >
               <Phone className={scss.icon} />
             </Link>

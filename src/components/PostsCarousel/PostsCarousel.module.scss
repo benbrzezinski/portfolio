@@ -1,0 +1,13 @@
+.carousel {
+  max-width: 600px;
+}
+
+.screenBox {
+  cursor: pointer;
+}
+
+.screen {
+  width: 600px;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+}

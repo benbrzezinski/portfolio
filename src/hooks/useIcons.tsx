@@ -21,7 +21,10 @@ import {
   SiMongodb,
   SiMongoose,
   SiSwagger,
+  SiExpo,
+  SiFirebase,
 } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -151,6 +154,24 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Expo = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiExpo />
+    </IconContext.Provider>
+  );
+
+  const ReactNative = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <TbBrandReactNative />
+    </IconContext.Provider>
+  );
+
+  const Firebase = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiFirebase />
+    </IconContext.Provider>
+  );
+
   return {
     Home,
     Works,
@@ -173,6 +194,9 @@ const useIcons = () => {
     Mongoose,
     Swagger,
     Database,
+    Expo,
+    ReactNative,
+    Firebase,
   };
 };
 
