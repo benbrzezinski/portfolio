@@ -1,0 +1,78 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 50px;
+  position: relative;
+
+  @include max-width(768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  translate: -50%;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: swing 5s ease-in-out infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: var(--br-sec);
+  }
+}
+
+.card {
+  display: grid;
+  gap: 30px;
+  @extend %glass;
+  padding: 35px;
+
+  @include max-width(768px) {
+    padding: 25px;
+  }
+
+  &:nth-of-type(3) {
+    grid-column: span 2;
+    position: relative;
+    transform-origin: top center;
+    animation: swing 5s ease-in-out infinite;
+
+    @include max-width(768px) {
+      grid-column: auto;
+      position: static;
+      animation-name: none;
+    }
+  }
+}
+
+.title {
+  font-size: clamp(1.5rem, 1.2647rem + 1.1765vw, 2rem);
+  text-align: center;
+}
+
+.skills {
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.figure {
+  display: grid;
+  place-items: center;
+  gap: 5px;
+}

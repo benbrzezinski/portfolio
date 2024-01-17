@@ -22,7 +22,7 @@ const Home = () => {
             1000,
           ]}
           wrapper="h1"
-          speed={25}
+          speed={20}
           repeat={Infinity}
         />
         <p className={scss.text}>
@@ -31,8 +31,16 @@ const Home = () => {
           user-centric design. I&apos;m all about making your online experience
           smooth and enjoyable. Let&apos;s bring your vision to life!
         </p>
-        <Link to="aboutme" className={scss.link} smooth={true} duration={500}>
-          More about me <GreaterThan className={scss.icon} />
+        <Link
+          to="aboutme"
+          style={{ maxWidth: 190, marginTop: 20 }}
+          smooth={true}
+          duration={500}
+          offset={-150}
+        >
+          <button className={scss.btn} type="button">
+            More about me <GreaterThan className={scss.icon} />
+          </button>
         </Link>
       </section>
       <img

@@ -5,8 +5,6 @@
   flex-wrap: wrap;
   gap: 50px;
   @extend %glass;
-  border-radius: var(--br-sec);
-  padding: 25px;
 
   &:not(:last-of-type) {
     margin-bottom: 100px;

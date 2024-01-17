@@ -4,6 +4,8 @@ import "aos/dist/aos.css";
 import Header from "./Header";
 import Home from "./Home";
 import Projects from "./Projects";
+import Skills from "./Skills";
+import Contact from "./Contact";
 import Squares from "./Squares";
 
 const App = () => {
@@ -21,6 +23,8 @@ const App = () => {
       <main>
         <Home />
         <Projects />
+        <Skills />
+        <Contact />
       </main>
       <Squares />
     </>

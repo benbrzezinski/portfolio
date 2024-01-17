@@ -6,10 +6,12 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  border-bottom-left-radius: var(--br-sec);
-  border-bottom-right-radius: var(--br-sec);
   @extend %glass;
   border-top-width: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--br-sec);
+  border-bottom-right-radius: var(--br-sec);
   padding-block: 10px;
   padding-inline: 15px;
 }

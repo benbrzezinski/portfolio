@@ -28,8 +28,7 @@ const projects = [
     description:
       "Step into the world of joy with our ice cream shop! We've crafted a delightful space where every visit is a journey into happiness. Explore a variety of flavors, from timeless classics to exciting creations that spark delight. Our carefully selected range captures the essence of pleasure",
     screenshots: ["/assets/images/ice-cream.jpg"],
-    website:
-      "https://barteknr1.github.io/Ice-Cream-made-with-Passion/#about-us",
+    website: "https://barteknr1.github.io/Ice-Cream-made-with-Passion/",
     code: "https://github.com/barteknr1/Ice-Cream-made-with-Passion",
   },
   {
