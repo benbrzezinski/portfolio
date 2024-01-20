@@ -29,7 +29,10 @@ const Projects = () => {
   const isMobileScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <div className="container" id="projects">
+    <div className={`container ${scss.wrapper}`} id="projects">
+      <h2 className={scss.title} data-aos="fade-up">
+        Projects
+      </h2>
       {projects.map(
         (
           { id, subtitle, name, description, screenshots, website, code },

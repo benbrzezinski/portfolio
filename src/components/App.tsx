@@ -6,6 +6,7 @@ import Home from "./Home";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
+import Footer from "./Footer";
 import Squares from "./Squares";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
         <Skills />
         <Contact />
       </main>
+      <Footer />
       <Squares />
     </>
   );

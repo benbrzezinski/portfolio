@@ -8,9 +8,11 @@ const Skills = () => {
 
   return (
     <div className={`container ${scss.wrapper}`} id="aboutme">
-      {!isMobileScreen && <div className={scss.circle}></div>}
+      <h2 className={scss.title} data-aos="fade-up">
+        Skills
+      </h2>
       <section className={scss.card} data-aos="flip-left">
-        <h2 className={scss.title}>Frontend Development</h2>
+        <h2 className={scss.subtitle}>Frontend Development</h2>
         <ul className={scss.skills}>
           {skills.frontend.map(({ icon, text }) => (
             <li key={nanoid()}>
@@ -28,7 +30,7 @@ const Skills = () => {
         </ul>
       </section>
       <section className={scss.card} data-aos="flip-right">
-        <h2 className={scss.title}>Backend Development</h2>
+        <h2 className={scss.subtitle}>Backend Development</h2>
         <ul className={scss.skills}>
           {skills.backend.map(({ icon, text }) => (
             <li key={nanoid()}>
@@ -45,11 +47,12 @@ const Skills = () => {
           ))}
         </ul>
       </section>
+      {!isMobileScreen && <div className={scss.circle}></div>}
       <section
         className={scss.card}
         data-aos={isMobileScreen ? "flip-left" : ""}
       >
-        <h2 className={scss.title}>Mobile Development</h2>
+        <h2 className={scss.subtitle}>Mobile Development</h2>
         <ul className={scss.skills}>
           {skills.mobile.map(({ icon, text }) => (
             <li key={nanoid()}>

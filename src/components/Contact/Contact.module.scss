@@ -3,4 +3,68 @@
 .wrapper {
   display: grid;
   place-items: center;
+  gap: 50px;
+}
+
+.title {
+  @extend %title;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @extend %glass;
+  padding-block: 50px;
+}
+
+.formTitle {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  text-align: center;
+}
+
+.box {
+  position: relative;
+}
+
+.label {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-sec);
+  color: rgba(50 55 67 / 0.8);
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  transition-property: color, transform;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+}
+
+.input {
+  width: 100%;
+  color: var(--cl-main);
+  background-color: transparent;
+  border: 1px solid var(--cl-main);
+  border-radius: var(--br-main);
+  transition: border-color var(--duration) var(--timing-function);
+  padding-block: 10px;
+  padding-inline: 15px;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--cl-sec);
+  }
+
+  &:last-of-type {
+    resize: none;
+  }
+}
+
+.error {
+  @extend %error;
+}
+
+.btn {
+  @extend %btn;
 }

@@ -1,5 +1,4 @@
 import { TypeAnimation } from "react-type-animation";
-import { Link } from "react-scroll";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Home.module.scss";
 
@@ -31,17 +30,16 @@ const Home = () => {
           user-centric design. I&apos;m all about making your online experience
           smooth and enjoyable. Let&apos;s bring your vision to life!
         </p>
-        <Link
-          to="aboutme"
-          style={{ maxWidth: 190, marginTop: 20 }}
-          smooth={true}
-          duration={500}
-          offset={-150}
+        <a
+          href="https://drive.google.com/file/d/1PhvJFyAow8jolTCGI4EfvHOJ7GH12PQt/view?usp=drive_link"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          style={{ maxWidth: 204, marginTop: 20 }}
         >
           <button className={scss.btn} type="button">
             More about me <GreaterThan className={scss.icon} />
           </button>
-        </Link>
+        </a>
       </section>
       <img
         className={scss.profileImg}

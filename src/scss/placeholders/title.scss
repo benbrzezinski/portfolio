@@ -1,0 +1,12 @@
+@use "./glass.scss" as *;
+
+%title {
+  width: 270px;
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-4);
+  text-align: center;
+  @extend %glass;
+  padding: 10px;
+  margin-bottom: 30px;
+}

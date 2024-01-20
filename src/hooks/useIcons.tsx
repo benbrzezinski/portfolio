@@ -1,13 +1,14 @@
 import { IconContext } from "react-icons";
 import { CgWebsite } from "react-icons/cg";
 import {
-  FaPersonRunning,
   FaReact,
   FaSass,
   FaHtml5,
   FaNodeJs,
   FaDatabase,
 } from "react-icons/fa6";
+import { GiClassicalKnowledge } from "react-icons/gi";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { FaHome, FaCode } from "react-icons/fa";
 import { IoCodeWorking, IoLogoCss3 } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
@@ -40,15 +41,21 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  const Person = ({ className }: IconClass) => (
+  const Knowledge = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <FaPersonRunning />
+      <GiClassicalKnowledge />
     </IconContext.Provider>
   );
 
   const Phone = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <MdPhone />
+    </IconContext.Provider>
+  );
+
+  const Hamburger = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <RxHamburgerMenu />
     </IconContext.Provider>
   );
 
@@ -175,8 +182,9 @@ const useIcons = () => {
   return {
     Home,
     Works,
-    Person,
+    Knowledge,
     Phone,
+    Hamburger,
     GreaterThan,
     Website,
     Code,

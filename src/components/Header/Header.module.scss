@@ -3,17 +3,45 @@
 .header {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   z-index: 100;
   @extend %glass;
   border-top-width: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: var(--br-sec);
-  border-bottom-right-radius: var(--br-sec);
-  padding-block: 10px;
-  padding-inline: 15px;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-radius: 0;
+  padding-block: 15px;
+  padding-inline: 0;
+}
+
+div.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0;
+}
+
+.logoBtn {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background-color: transparent;
+  border: none;
+}
+
+.logoImg {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--br-sec);
+}
+
+.logoText {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: 24px;
+  color: var(--cl-main);
 }
 
 .navList {
@@ -28,8 +56,6 @@
   height: 50px;
   display: grid;
   place-items: center;
-  font-family: var(--ff-sec);
-  font-size: var(--fs-sec);
   color: var(--cl-main);
   cursor: pointer;
   border-radius: 50%;
@@ -50,7 +76,16 @@
   }
 }
 
+.hamburger {
+  @extend .navLink;
+  background-color: transparent;
+}
+
 .icon {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
+}
+
+.btn {
+  @extend %btn;
 }

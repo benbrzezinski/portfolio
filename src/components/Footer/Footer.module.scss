@@ -1,0 +1,11 @@
+@use "../../scss/index.scss" as *;
+
+footer.wrapper {
+  width: 100%;
+  padding-inline: 15px;
+  padding-bottom: 15px;
+}
+
+.box {
+  @extend %glass;
+}
