@@ -1,52 +1,29 @@
 @use "../../scss/index.scss" as *;
 
-.header {
+.wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  inset: 10px;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  translate: 120%;
+  scale: 0.8;
   @extend %glass;
-  border-top-width: 0;
-  border-left-width: 0;
-  border-right-width: 0;
-  border-radius: 0;
-  padding-block: 15px;
-  padding-inline: 0;
-}
+  backdrop-filter: blur(10px);
+  transition: scale var(--duration) var(--timing-function),
+    translate var(--duration) var(--timing-function) var(--duration);
 
-div.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  padding-block: 0;
-}
-
-.logoBtn {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  background-color: transparent;
-  border: none;
-}
-
-.logoImg {
-  width: 50px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: var(--br-sec);
-}
-
-.logoText {
-  font-family: var(--ff-sec);
-  font-weight: var(--fw-sec);
-  font-size: 24px;
-  color: var(--cl-main);
+  &.visible {
+    translate: 0;
+    scale: 1;
+    transition: translate var(--duration) var(--timing-function),
+      scale var(--duration) var(--timing-function) var(--duration);
+  }
 }
 
 .navList {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
@@ -55,7 +32,7 @@ div.wrapper {
 .navLink {
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
-  font-size: 18px;
+  font-size: clamp(1rem, 0.1667rem + 4.1667vw, 2.25rem);
   color: var(--cl-main);
   cursor: pointer;
   transition-property: color;
@@ -69,7 +46,10 @@ div.wrapper {
   }
 }
 
-.hamburger {
+.btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
   width: 50px;
   height: 50px;
   display: grid;
@@ -87,13 +67,20 @@ div.wrapper {
     color: var(--cl-sec);
     border-color: var(--cl-sec);
   }
+
+  &.github {
+    top: unset;
+    bottom: 25px;
+    left: 25px;
+  }
+
+  &.linkedin {
+    top: unset;
+    bottom: 25px;
+  }
 }
 
 .icon {
   width: 28px;
   height: 28px;
-}
-
-.btn {
-  @extend %btn;
 }

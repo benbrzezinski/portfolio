@@ -15,12 +15,11 @@
   flex-direction: column;
   gap: 50px;
   @extend %glass;
-  padding-block: 50px;
 }
 
-.formTitle {
+.text {
+  font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
-  font-size: var(--fs-3);
   text-align: center;
 }
 
@@ -29,12 +28,11 @@
 }
 
 .label {
-  font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
   color: rgba(50 55 67 / 0.8);
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 15px;
   transition-property: color, transform;
   transition-duration: var(--duration);

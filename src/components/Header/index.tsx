@@ -1,11 +1,12 @@
 import { Link } from "react-scroll";
 import { useMediaQuery } from "react-responsive";
+import { HeaderTypes } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Header.module.scss";
 
-const Header = () => {
-  const { Home, Works, Knowledge, Phone, Hamburger } = useIcons();
-  const isMobileScreen = useMediaQuery({ query: "(max-width: 850px)" });
+const Header = ({ openMobileNav }: HeaderTypes) => {
+  const { Hamburger } = useIcons();
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 900px)" });
 
   return (
     <header className={scss.header}>
@@ -24,12 +25,16 @@ const Header = () => {
           <p className={scss.logoText}>Benfolio</p>
         </button>
         {isMobileScreen ? (
-          <button className={scss.hamburger} type="button">
+          <button
+            className={scss.hamburger}
+            type="button"
+            onClick={openMobileNav}
+          >
             <Hamburger className={scss.icon} />
           </button>
         ) : (
           <>
-            <nav className={scss.nav}>
+            <nav>
               <ul className={scss.navList}>
                 <li className={scss.navItem}>
                   <Link
@@ -39,8 +44,9 @@ const Header = () => {
                     spy={true}
                     smooth={true}
                     duration={800}
+                    spyThrottle={300}
                   >
-                    <Home className={scss.icon} />
+                    Home
                   </Link>
                 </li>
                 <li className={scss.navItem}>
@@ -51,8 +57,9 @@ const Header = () => {
                     spy={true}
                     smooth={true}
                     duration={800}
+                    spyThrottle={300}
                   >
-                    <Works className={scss.icon} />
+                    Projects
                   </Link>
                 </li>
                 <li className={scss.navItem}>
@@ -63,8 +70,9 @@ const Header = () => {
                     spy={true}
                     smooth={true}
                     duration={800}
+                    spyThrottle={300}
                   >
-                    <Knowledge className={scss.icon} />
+                    Skills
                   </Link>
                 </li>
                 <li className={scss.navItem}>
@@ -75,8 +83,9 @@ const Header = () => {
                     spy={true}
                     smooth={true}
                     duration={800}
+                    spyThrottle={300}
                   >
-                    <Phone className={scss.icon} />
+                    Contact
                   </Link>
                 </li>
               </ul>

@@ -1,29 +1,45 @@
+import { useEffect, useState, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Home.module.scss";
 
 const Home = () => {
+  const [titleHeight, setTitleHeight] = useState(0);
   const { GreaterThan } = useIcons();
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) setTitleHeight(titleRef.current.offsetHeight);
+  }, [titleRef]);
 
   return (
     <div className={`container ${scss.wrapper}`} id="home">
       <section className={scss.titleBox}>
-        <TypeAnimation
-          className={scss.title}
-          sequence={[
-            "Hello! I'm Beniamin, front-end developer",
-            1000,
-            "Hello! I'm Beniamin, web developer",
-            1000,
-            "Hello! I'm Beniamin, full-stack developer",
-            1000,
-            "Ehh, whatever",
-            1000,
-          ]}
-          wrapper="h1"
-          speed={20}
-          repeat={Infinity}
-        />
+        <div
+          style={{
+            minHeight: titleHeight * 2,
+            display: "flex",
+            alignItems: "flex-end",
+          }}
+        >
+          <TypeAnimation
+            className={scss.title}
+            ref={titleRef}
+            sequence={[
+              "Hello! I'm Beniamin, front-end developer",
+              1000,
+              "Hello! I'm Beniamin, web developer",
+              1000,
+              "Hello! I'm Beniamin, full-stack developer",
+              1000,
+              "Ehh, whatever",
+              1000,
+            ]}
+            wrapper="h1"
+            speed={20}
+            repeat={Infinity}
+          />
+        </div>
         <p className={scss.text}>
           Passionate developer with a creative mindset. Transforming ideas into
           user-friendly websites. Committed to innovation, clean code, and

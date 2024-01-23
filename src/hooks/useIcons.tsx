@@ -6,13 +6,12 @@ import {
   FaHtml5,
   FaNodeJs,
   FaDatabase,
+  FaGithub,
 } from "react-icons/fa6";
-import { GiClassicalKnowledge } from "react-icons/gi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaHome, FaCode } from "react-icons/fa";
-import { IoCodeWorking, IoLogoCss3 } from "react-icons/io5";
+import { FaCode, FaLinkedin } from "react-icons/fa";
+import { IoLogoCss3, IoClose } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import { MdPhone } from "react-icons/md";
 import {
   SiVite,
   SiTypescript,
@@ -29,33 +28,15 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { IconClass } from "../types";
 
 const useIcons = () => {
-  const Home = ({ className }: IconClass) => (
-    <IconContext.Provider value={{ className }}>
-      <FaHome />
-    </IconContext.Provider>
-  );
-
-  const Works = ({ className }: IconClass) => (
-    <IconContext.Provider value={{ className }}>
-      <IoCodeWorking />
-    </IconContext.Provider>
-  );
-
-  const Knowledge = ({ className }: IconClass) => (
-    <IconContext.Provider value={{ className }}>
-      <GiClassicalKnowledge />
-    </IconContext.Provider>
-  );
-
-  const Phone = ({ className }: IconClass) => (
-    <IconContext.Provider value={{ className }}>
-      <MdPhone />
-    </IconContext.Provider>
-  );
-
   const Hamburger = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <RxHamburgerMenu />
+    </IconContext.Provider>
+  );
+
+  const Close = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <IoClose />
     </IconContext.Provider>
   );
 
@@ -179,12 +160,21 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const GitHub = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaGithub />
+    </IconContext.Provider>
+  );
+
+  const LinkedIn = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaLinkedin />
+    </IconContext.Provider>
+  );
+
   return {
-    Home,
-    Works,
-    Knowledge,
-    Phone,
     Hamburger,
+    Close,
     GreaterThan,
     Website,
     Code,
@@ -205,6 +195,8 @@ const useIcons = () => {
     Expo,
     ReactNative,
     Firebase,
+    GitHub,
+    LinkedIn,
   };
 };
 

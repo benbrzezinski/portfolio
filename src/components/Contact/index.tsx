@@ -56,6 +56,9 @@ const Contact = () => {
         data-aos="zoom-in-up"
         onSubmit={handleSubmit}
       >
+        <p className={scss.text}>
+          Feel free to reach out to me for any questions or opportunities
+        </p>
         <div className={scss.box}>
           <label
             htmlFor={ID.current.name}
