@@ -7,5 +7,72 @@ footer.wrapper {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
   @extend %glass;
+}
+
+.name {
+  font-weight: var(--fw-sec);
+  font-size: clamp(1.625rem, 1.375rem + 1.25vw, 2rem);
+  color: var(--cl-sec);
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  @include max-width(420px) {
+    gap: 25px;
+  }
+}
+
+.navLink {
+  font-weight: var(--fw-sec);
+  font-size: clamp(0.8125rem, 0.6042rem + 1.0417vw, 1.125rem);
+  color: var(--cl-main);
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+  }
+}
+
+.socialMediaList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.socialMediaLink {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  color: var(--cl-main);
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.copyright {
+  font-size: clamp(0.6875rem, 0.4792rem + 1.0417vw, 1rem);
 }

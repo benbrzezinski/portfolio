@@ -7,6 +7,7 @@ import {
   FaNodeJs,
   FaDatabase,
   FaGithub,
+  FaSquareFacebook,
 } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaCode, FaLinkedin } from "react-icons/fa";
@@ -172,6 +173,12 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Facebook = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaSquareFacebook />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -197,6 +204,7 @@ const useIcons = () => {
     Firebase,
     GitHub,
     LinkedIn,
+    Facebook,
   };
 };
 

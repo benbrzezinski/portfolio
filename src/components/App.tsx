@@ -7,7 +7,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Projects from "./Projects";
 import Skills from "./Skills";
-import Contact from "./Contact";
+import ContactForm from "./ContactForm";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
 import Squares from "./Squares";
@@ -47,7 +47,7 @@ const App = () => {
         <Home />
         <Projects />
         <Skills />
-        <Contact />
+        <ContactForm />
       </main>
       <Footer />
       {isMobileScreen && (

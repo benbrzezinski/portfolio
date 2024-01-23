@@ -1,9 +1,9 @@
 import { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import useInputFocused from "../../hooks/useInputFocused";
-import scss from "./Contact.module.scss";
+import scss from "./ContactForm.module.scss";
 
-const Contact = () => {
+const ContactForm = () => {
   const ID = useRef({
     name: nanoid(),
     email: nanoid(),
@@ -131,4 +131,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;
