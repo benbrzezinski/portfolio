@@ -26,7 +26,7 @@ const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavTypes) => {
               smooth={true}
               duration={800}
               spyThrottle={300}
-              onSetActive={closeMobileNav}
+              onClick={closeMobileNav}
             >
               Home
             </Link>
@@ -40,7 +40,7 @@ const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavTypes) => {
               smooth={true}
               duration={800}
               spyThrottle={300}
-              onSetActive={closeMobileNav}
+              onClick={closeMobileNav}
             >
               Projects
             </Link>
@@ -54,7 +54,7 @@ const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavTypes) => {
               smooth={true}
               duration={800}
               spyThrottle={300}
-              onSetActive={closeMobileNav}
+              onClick={closeMobileNav}
             >
               Skills
             </Link>
@@ -68,7 +68,7 @@ const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavTypes) => {
               smooth={true}
               duration={800}
               spyThrottle={300}
-              onSetActive={closeMobileNav}
+              onClick={closeMobileNav}
             >
               Contact
             </Link>
