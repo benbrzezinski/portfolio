@@ -1,10 +1,12 @@
 import { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
+import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import useInputFocused from "../../hooks/useInputFocused";
 import scss from "./ContactForm.module.scss";
 
 const ContactForm = () => {
   const ID = useRef({
+    toast: nanoid(),
     name: nanoid(),
     email: nanoid(),
     message: nanoid(),
@@ -37,7 +39,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (nameError || emailError || messageError) return;
-    alert("Success");
+    toast.success("Your message has been sent", { toastId: ID.current.toast });
 
     setValues({
       name: "",
@@ -52,10 +54,15 @@ const ContactForm = () => {
         Contact
       </h2>
       <form
-        className={scss.contactForm}
+        name="contact"
+        method="post"
+        data-netlify-honeypot="bot-field"
+        data-netlify="true"
         data-aos="zoom-in-up"
+        className={scss.contactForm}
         onSubmit={handleSubmit}
       >
+        <input type="hidden" name="form-name" value="contact" />
         <p className={scss.text}>
           Feel free to reach out to me for any questions or opportunities
         </p>
@@ -65,7 +72,7 @@ const ContactForm = () => {
             className={scss.label}
             style={nameFocused && labelStyles}
           >
-            Name
+            Your Name
           </label>
           <input
             type="text"
@@ -86,7 +93,7 @@ const ContactForm = () => {
             className={scss.label}
             style={emailFocused && labelStyles}
           >
-            E-mail
+            Your Email
           </label>
           <input
             type="email"

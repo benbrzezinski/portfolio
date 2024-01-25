@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import Header from "./Header";
 import Home from "./Home";
 import Projects from "./Projects";
@@ -57,6 +57,7 @@ const App = () => {
         />
       )}
       <Squares />
+      <ToastContainer />
     </>
   );
 };
