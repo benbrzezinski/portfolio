@@ -27,46 +27,14 @@ const ContactForm = () => {
     labelStyles,
   } = useInputFocused();
 
+  const canBeSent = nameError || emailError || messageError ? true : false;
+
   const handleChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
   > = e => {
     const { name, value } = e.currentTarget;
     setValues(v => ({ ...v, [name]: value }));
   };
-
-  // const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
-  //   try {
-  //     e.preventDefault();
-
-  //     if (nameError || emailError || messageError) return;
-
-  //     const res = await fetch("/", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //       body: new URLSearchParams(values).toString(),
-  //     });
-
-  //     if (res.ok) {
-  //       toast.success("Your message has been sent", {
-  //         toastId: ID.current.toast,
-  //       });
-  //     } else {
-  //       toast.error("Something went wrong, please try again later", {
-  //         toastId: ID.current.toast,
-  //       });
-  //     }
-
-  //     setValues({
-  //       name: "",
-  //       email: "",
-  //       message: "",
-  //     });
-  //   } catch {
-  //     toast.error("An unexpected error occurred, please try again later", {
-  //       toastId: ID.current.toast,
-  //     });
-  //   }
-  // };
 
   return (
     <div className={`container ${scss.wrapper}`} id="contact">
@@ -148,7 +116,7 @@ const ContactForm = () => {
           ></textarea>
           {messageError && <p className={scss.error}>{messageError}</p>}
         </div>
-        <button type="submit" className={scss.btn}>
+        <button type="submit" className={scss.btn} disabled={canBeSent}>
           Send
         </button>
       </form>
