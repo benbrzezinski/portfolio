@@ -14,7 +14,7 @@ const Header = ({ openMobileNav }: HeaderTypes) => {
         <button
           type="button"
           className={scss.logoBtn}
-          onClick={() => location.reload()}
+          onClick={() => scrollTo({ top: 0, left: 0, behavior: "smooth" })}
         >
           <img
             className={scss.logoImg}

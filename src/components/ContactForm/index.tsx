@@ -1,5 +1,4 @@
-import { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
-import { toast } from "react-toastify";
+import { ChangeEventHandler, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import useInputFocused from "../../hooks/useInputFocused";
 import scss from "./ContactForm.module.scss";
@@ -35,18 +34,39 @@ const ContactForm = () => {
     setValues(v => ({ ...v, [name]: value }));
   };
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
-    e.preventDefault();
+  // const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
+  //   try {
+  //     e.preventDefault();
 
-    if (nameError || emailError || messageError) return;
-    toast.success("Your message has been sent", { toastId: ID.current.toast });
+  //     if (nameError || emailError || messageError) return;
 
-    setValues({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
+  //     const res = await fetch("/", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //       body: new URLSearchParams(values).toString(),
+  //     });
+
+  //     if (res.ok) {
+  //       toast.success("Your message has been sent", {
+  //         toastId: ID.current.toast,
+  //       });
+  //     } else {
+  //       toast.error("Something went wrong, please try again later", {
+  //         toastId: ID.current.toast,
+  //       });
+  //     }
+
+  //     setValues({
+  //       name: "",
+  //       email: "",
+  //       message: "",
+  //     });
+  //   } catch {
+  //     toast.error("An unexpected error occurred, please try again later", {
+  //       toastId: ID.current.toast,
+  //     });
+  //   }
+  // };
 
   return (
     <div className={`container ${scss.wrapper}`} id="contact">
@@ -56,11 +76,9 @@ const ContactForm = () => {
       <form
         name="contact"
         method="post"
-        data-netlify-honeypot="bot-field"
-        data-netlify="true"
+        action="/contact"
         data-aos="zoom-in-up"
         className={scss.contactForm}
-        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className={scss.text}>
