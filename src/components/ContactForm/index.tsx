@@ -1,4 +1,5 @@
-import { ChangeEventHandler, useRef, useState } from "react";
+import { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import useInputFocused from "../../hooks/useInputFocused";
 import scss from "./ContactForm.module.scss";
@@ -26,6 +27,7 @@ const ContactForm = () => {
     handleFocus,
     labelStyles,
   } = useInputFocused();
+  const navigate = useNavigate();
 
   const canBeSent = nameError || emailError || messageError ? true : false;
 
@@ -34,6 +36,18 @@ const ContactForm = () => {
   > = e => {
     const { name, value } = e.currentTarget;
     setValues(v => ({ ...v, [name]: value }));
+  };
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault();
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(values).toString(),
+    })
+      .then(() => navigate("/success"))
+      .catch(err => console.error(err));
   };
 
   return (
@@ -47,6 +61,7 @@ const ContactForm = () => {
         action="/success"
         data-aos="zoom-in-up"
         className={scss.contactForm}
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className={scss.text}>
