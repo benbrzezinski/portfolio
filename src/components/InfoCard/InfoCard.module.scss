@@ -1,0 +1,59 @@
+@use "../../scss/index.scss" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  @extend %glass;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: clamp(1.25rem, 0.75rem + 2.5vw, 2rem);
+}
+
+.text {
+  font-family: var(--ff-sec);
+  font-size: clamp(0.75rem, 0.4167rem + 1.6667vw, 1.25rem);
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: clamp(0.875rem, 0.5417rem + 1.6667vw, 1.375rem);
+  color: var(--cl-sec);
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--cl-sec);
+    position: absolute;
+    bottom: -5px;
+    translate: calc(100% + 30px);
+    transition: translate var(--duration) var(--timing-function);
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after {
+      translate: 0;
+    }
+  }
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+
+  @include max-width(500px) {
+    width: 18px;
+    height: 18px;
+  }
+}

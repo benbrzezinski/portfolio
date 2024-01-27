@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import useIcons from "../../hooks/useIcons";
-import scss from "./Home.module.scss";
+import scss from "./Hero.module.scss";
 
-const Home = () => {
+const Hero = () => {
   const [titleHeight, setTitleHeight] = useState(0);
-  const { GreaterThan } = useIcons();
+  const { ArrowRight } = useIcons();
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const Home = () => {
           style={{ maxWidth: 204, marginTop: 20 }}
         >
           <button className={scss.btn} type="button">
-            More about me <GreaterThan className={scss.icon} />
+            More about me <ArrowRight className={scss.icon} />
           </button>
         </a>
       </section>
@@ -67,4 +67,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

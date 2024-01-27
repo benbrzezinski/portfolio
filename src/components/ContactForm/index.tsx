@@ -44,7 +44,7 @@ const ContactForm = () => {
       <form
         name="contact"
         method="post"
-        action="/contact"
+        action="/success"
         data-aos="zoom-in-up"
         className={scss.contactForm}
       >

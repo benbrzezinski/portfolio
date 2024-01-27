@@ -8,6 +8,7 @@ import {
   FaDatabase,
   FaGithub,
   FaSquareFacebook,
+  FaArrowLeft,
 } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaCode, FaLinkedin } from "react-icons/fa";
@@ -41,9 +42,15 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  const GreaterThan = ({ className }: IconClass) => (
+  const ArrowRight = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <IoIosArrowForward />
+    </IconContext.Provider>
+  );
+
+  const ArrowLeft = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaArrowLeft />
     </IconContext.Provider>
   );
 
@@ -182,7 +189,8 @@ const useIcons = () => {
   return {
     Hamburger,
     Close,
-    GreaterThan,
+    ArrowRight,
+    ArrowLeft,
     Website,
     Code,
     Vite,
