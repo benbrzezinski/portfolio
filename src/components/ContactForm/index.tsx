@@ -40,14 +40,7 @@ const ContactForm = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(values).toString(),
-    })
-      .then(() => navigate("/success"))
-      .catch(err => console.error(err));
+    navigate("/success");
   };
 
   return (
