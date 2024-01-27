@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
+import { ChangeEventHandler, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import useInputFocused from "../../hooks/useInputFocused";
@@ -38,11 +38,6 @@ const ContactForm = () => {
     setValues(v => ({ ...v, [name]: value }));
   };
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
-    e.preventDefault();
-    navigate("/success");
-  };
-
   return (
     <div className={`container ${scss.wrapper}`} id="contact">
       <h2 className={scss.title} data-aos="fade-up">
@@ -54,7 +49,7 @@ const ContactForm = () => {
         action="/success"
         data-aos="zoom-in-up"
         className={scss.contactForm}
-        onSubmit={handleSubmit}
+        onSubmit={() => navigate("/success")}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className={scss.text}>
