@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { ToastContainer } from "react-toastify";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
@@ -41,6 +43,9 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Benfolio</title>
+      </Helmet>
       <Header openMobileNav={openMobileNav} />
       <main>
         <Hero />
@@ -56,6 +61,7 @@ const Home = () => {
         />
       )}
       <Squares />
+      <ToastContainer />
     </>
   );
 };

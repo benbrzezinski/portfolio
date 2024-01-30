@@ -65,4 +65,13 @@
 
 .btn {
   @extend %btn;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  animation: loading 0.8s linear infinite;
 }

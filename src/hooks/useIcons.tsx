@@ -26,7 +26,7 @@ import {
   SiExpo,
   SiFirebase,
 } from "react-icons/si";
-import { TbBrandReactNative } from "react-icons/tb";
+import { TbBrandReactNative, TbLoader2 } from "react-icons/tb";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -51,6 +51,12 @@ const useIcons = () => {
   const ArrowLeft = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <FaArrowLeft />
+    </IconContext.Provider>
+  );
+
+  const Loader = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <TbLoader2 />
     </IconContext.Provider>
   );
 
@@ -191,6 +197,7 @@ const useIcons = () => {
     Close,
     ArrowRight,
     ArrowLeft,
+    Loader,
     Website,
     Code,
     Vite,

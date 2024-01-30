@@ -7,6 +7,11 @@ export interface MobileNavTypes {
   closeMobileNav: () => void;
 }
 
+export interface RoutesTypes {
+  redirectTo: string;
+  component: React.JSX.Element;
+}
+
 export interface IconClass {
   className: string;
 }
