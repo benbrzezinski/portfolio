@@ -9,13 +9,13 @@ import useIcons from "../../hooks/useIcons";
 import scss from "./ContactForm.module.scss";
 
 const ContactForm = () => {
-  const ID = {
+  const ID = useRef({
     name: nanoid(),
     email: nanoid(),
     message: nanoid(),
     toast_res_error: nanoid(),
     toast_unexpected_error: nanoid(),
-  };
+  });
   const [values, setValues] = useState({
     user_name: "",
     user_email: "",
@@ -64,13 +64,13 @@ const ContactForm = () => {
             dispatch(setIsUserAllowed());
           } else {
             toast.error("Something went wrong, please try again later", {
-              toastId: ID.toast_res_error,
+              toastId: ID.current.toast_res_error,
             });
           }
         }
       } catch {
         toast.error("An unexpected error occurred, please try again later", {
-          toastId: ID.toast_unexpected_error,
+          toastId: ID.current.toast_unexpected_error,
         });
       } finally {
         setLoading(false);
@@ -94,7 +94,7 @@ const ContactForm = () => {
         </p>
         <div className={scss.box}>
           <label
-            htmlFor={ID.name}
+            htmlFor={ID.current.name}
             className={scss.label}
             style={nameFocused && labelStyles}
           >
@@ -103,7 +103,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="user_name"
-            id={ID.name}
+            id={ID.current.name}
             className={scss.input}
             value={values.user_name}
             onChange={handleChange}
@@ -115,7 +115,7 @@ const ContactForm = () => {
         </div>
         <div className={scss.box}>
           <label
-            htmlFor={ID.email}
+            htmlFor={ID.current.email}
             className={scss.label}
             style={emailFocused && labelStyles}
           >
@@ -124,7 +124,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="user_email"
-            id={ID.email}
+            id={ID.current.email}
             className={scss.input}
             value={values.user_email}
             onChange={handleChange}
@@ -136,7 +136,7 @@ const ContactForm = () => {
         </div>
         <div className={scss.box}>
           <label
-            htmlFor={ID.message}
+            htmlFor={ID.current.message}
             className={scss.label}
             style={messageFocused && labelStyles}
           >
@@ -144,7 +144,7 @@ const ContactForm = () => {
           </label>
           <textarea
             name="message"
-            id={ID.message}
+            id={ID.current.message}
             className={scss.input}
             value={values.message}
             onChange={handleChange}
