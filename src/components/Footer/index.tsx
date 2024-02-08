@@ -86,7 +86,7 @@ const Footer = () => {
           </li>
         </ul>
         <p className={scss.copyright}>
-          © 2024 Beniamin Brzeziński. All rights reserved.
+          © {new Date().getFullYear()} Beniamin Brzeziński. All rights reserved.
         </p>
       </div>
     </footer>
