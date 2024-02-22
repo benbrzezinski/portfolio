@@ -298,6 +298,18 @@ const Projects = () => {
             <div className={scss.detailsBox}>
               {name === "Wallet" && (
                 <>
+                  <button
+                    className={
+                      detailsOpen
+                        ? `${scss.notifyBtn} ${scss.left}`
+                        : scss.notifyBtn
+                    }
+                    type="button"
+                    title="Login Details"
+                    onClick={openDetails}
+                  >
+                    <NotificationImportant className={scss.notify} />
+                  </button>
                   <ul
                     className={
                       detailsOpen ? scss.details : `${scss.details} ${scss.up}`
@@ -306,7 +318,7 @@ const Projects = () => {
                   >
                     <li>
                       <h3 className={scss.detailsTitle}>
-                        To login, you can use these details:
+                        To login, you can use these details
                       </h3>
                     </li>
                     <li>
@@ -332,18 +344,6 @@ const Projects = () => {
                       <Copy className={scss.icon} />
                     </li>
                   </ul>
-                  <button
-                    className={
-                      detailsOpen
-                        ? `${scss.notifyBtn} ${scss.left}`
-                        : scss.notifyBtn
-                    }
-                    type="button"
-                    title="Login Details"
-                    onClick={openDetails}
-                  >
-                    <NotificationImportant className={scss.notify} />
-                  </button>
                 </>
               )}
               {name === "Posts" ? (

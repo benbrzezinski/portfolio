@@ -61,7 +61,11 @@ const Home = () => {
         />
       )}
       <Squares />
-      <ToastContainer draggablePercent={50} closeOnClick />
+      <ToastContainer
+        bodyStyle={{ lineHeight: 1.4 }}
+        draggablePercent={50}
+        closeOnClick
+      />
     </>
   );
 };

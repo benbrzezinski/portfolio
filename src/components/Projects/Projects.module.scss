@@ -72,10 +72,12 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   @extend %glass;
   border-radius: var(--br-main) 0 var(--br-main) 0;
-  backdrop-filter: blur(10px);
+  border: none;
   box-shadow: none;
+  backdrop-filter: blur(8px);
   transition-property: transform;
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);
@@ -93,6 +95,7 @@
 .detailsTitle {
   font-weight: var(--fw-sec);
   font-size: clamp(0.875rem, 0.625rem + 1.25vw, 1.25rem);
+  margin-bottom: 8px;
 }
 
 .detailsText {
@@ -103,11 +106,13 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   color: var(--cl-main);
   @extend %glass;
   border-radius: var(--br-main) 0 var(--br-main) 0;
-  backdrop-filter: blur(10px);
+  border: none;
   box-shadow: none;
+  backdrop-filter: blur(8px);
   padding: 10px;
   transition-property: color, transform;
   transition-duration: var(--duration);
