@@ -9,6 +9,7 @@ import {
   FaGithub,
   FaSquareFacebook,
   FaArrowLeft,
+  FaCopy,
 } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaCode, FaLinkedin } from "react-icons/fa";
@@ -27,6 +28,7 @@ import {
   SiFirebase,
 } from "react-icons/si";
 import { TbBrandReactNative, TbLoader2 } from "react-icons/tb";
+import { MdNotificationImportant } from "react-icons/md";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -192,6 +194,18 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const NotificationImportant = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <MdNotificationImportant />
+    </IconContext.Provider>
+  );
+
+  const Copy = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaCopy />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -220,6 +234,8 @@ const useIcons = () => {
     GitHub,
     LinkedIn,
     Facebook,
+    NotificationImportant,
+    Copy,
   };
 };
 

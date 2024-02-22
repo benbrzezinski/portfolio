@@ -16,7 +16,7 @@
   gap: 50px;
   @extend %glass;
 
-  @include max-width(1100px) {
+  @include max-width(1120px) {
     flex-direction: column;
     align-items: center;
   }
@@ -41,8 +41,14 @@
 }
 
 .name {
+  width: fit-content;
   font-weight: var(--fw-sec);
   font-size: var(--fs-3);
+  color: var(--cl-main);
+}
+
+.description {
+  font-size: clamp(0.875rem, 0.7917rem + 0.4167vw, 1rem);
 }
 
 .toolsBox {
@@ -55,9 +61,73 @@
 }
 
 .detailsBox {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow: hidden;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @extend %glass;
+  border-radius: var(--br-main) 0 var(--br-main) 0;
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+  transition-property: transform;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  @include max-width(400px) {
+    right: 0;
+    border-radius: var(--br-main);
+  }
+
+  &.up {
+    transform: translateY(-100%);
+  }
+}
+
+.detailsTitle {
+  font-weight: var(--fw-sec);
+  font-size: clamp(0.875rem, 0.625rem + 1.25vw, 1.25rem);
+}
+
+.detailsText {
+  font-size: clamp(0.875rem, 0.7083rem + 0.8333vw, 1.125rem);
+}
+
+.notifyBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--cl-main);
+  @extend %glass;
+  border-radius: var(--br-main) 0 var(--br-main) 0;
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+  padding: 10px;
+  transition-property: color, transform;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+  }
+
+  &.left {
+    transform: translateX(-100%);
+  }
+}
+
+.notify {
+  width: 30px;
+  height: 30px;
+  color: inherit;
+  animation: wobble-hor-top 1.5s infinite both;
 }
 
 .screenshot {

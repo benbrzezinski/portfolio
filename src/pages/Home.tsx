@@ -61,7 +61,7 @@ const Home = () => {
         />
       )}
       <Squares />
-      <ToastContainer />
+      <ToastContainer draggablePercent={50} closeOnClick />
     </>
   );
 };

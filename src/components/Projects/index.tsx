@@ -1,10 +1,18 @@
+import { useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import { toast } from "react-toastify";
+import { nanoid } from "nanoid";
 import PostsCarousel from "../PostsCarousel";
 import useIcons from "../../hooks/useIcons";
 import projects from "../../data/projects";
 import scss from "./Projects.module.scss";
 
 const Projects = () => {
+  const ID = useRef({
+    toast_success: nanoid(),
+    toast_error: nanoid(),
+  });
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const {
     Website,
     Code,
@@ -25,8 +33,44 @@ const Projects = () => {
     Expo,
     ReactNative,
     Firebase,
+    NotificationImportant,
+    Copy,
   } = useIcons();
+  const emailRef = useRef<HTMLParagraphElement | null>(null);
+  const passwordRef = useRef<HTMLParagraphElement | null>(null);
   const isMobileScreen = useMediaQuery({ query: "(max-width: 768px)" });
+
+  const closeDetails = () => {
+    setDetailsOpen(false);
+    document.removeEventListener("click", closeDetails);
+  };
+
+  const openDetails = () => {
+    setDetailsOpen(true);
+    setTimeout(() => {
+      document.addEventListener("click", closeDetails);
+    }, 0);
+  };
+
+  const copyToClipboard = () => {
+    if (emailRef.current && passwordRef.current) {
+      const email = emailRef.current.innerText.split(" ")[1];
+      const password = passwordRef.current.innerText.split(" ")[1];
+
+      navigator.clipboard
+        .writeText(`${email} ${password}`)
+        .then(() =>
+          toast.success("Details copied to the clipboard", {
+            toastId: ID.current.toast_success,
+          })
+        )
+        .catch(() =>
+          toast.error("Failed to copy to the clipboard", {
+            toastId: ID.current.toast_error,
+          })
+        );
+    }
+  };
 
   return (
     <div className={`container ${scss.wrapper}`} id="projects">
@@ -52,10 +96,22 @@ const Projects = () => {
             <div className={scss.projectInfoWrapper}>
               <div className={scss.infoBox}>
                 <p className={scss.subtitle}>{subtitle}</p>
-                <h2 className={scss.name}>{name}</h2>
+                <a
+                  href={website}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className={scss.name}
+                >
+                  {name}
+                </a>
                 <p className={scss.description}>{description}</p>
               </div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <div className={scss.toolsBox}>
                   {name === "Darling Delights" && (
                     <>
@@ -238,21 +294,58 @@ const Projects = () => {
                   )}
                 </div>
               </div>
-              {name === "Wallet" && (
-                <ul>
-                  <li>
-                    <h3>To login, you can use these details:</h3>
-                  </li>
-                  <li>
-                    <p>Email: benek9311@wp.pl</p>
-                  </li>
-                  <li>
-                    <p>Password: Ben100</p>
-                  </li>
-                </ul>
-              )}
             </div>
             <div className={scss.detailsBox}>
+              {name === "Wallet" && (
+                <>
+                  <ul
+                    className={
+                      detailsOpen ? scss.details : `${scss.details} ${scss.up}`
+                    }
+                    style={{ padding: isMobileScreen ? 15 : 20 }}
+                  >
+                    <li>
+                      <h3 className={scss.detailsTitle}>
+                        To login, you can use these details:
+                      </h3>
+                    </li>
+                    <li>
+                      <p className={scss.detailsText} ref={emailRef}>
+                        Email: benek9311@wp.pl
+                      </p>
+                    </li>
+                    <li>
+                      <p className={scss.detailsText} ref={passwordRef}>
+                        Password: Ben100
+                      </p>
+                    </li>
+                    <li
+                      style={{
+                        position: "absolute",
+                        bottom: isMobileScreen ? 15 : 20,
+                        right: isMobileScreen ? 15 : 20,
+                        cursor: "pointer",
+                      }}
+                      title="Copy"
+                      onClick={copyToClipboard}
+                    >
+                      <Copy className={scss.icon} />
+                    </li>
+                  </ul>
+                  <button
+                    className={
+                      detailsOpen
+                        ? `${scss.notifyBtn} ${scss.left}`
+                        : scss.notifyBtn
+                    }
+                    type="button"
+                    title="Login Details"
+                    onClick={openDetails}
+                  >
+                    <NotificationImportant className={scss.notify} />
+                  </button>
+                </>
+              )}
               {name === "Posts" ? (
                 <PostsCarousel />
               ) : (
@@ -275,6 +368,7 @@ const Projects = () => {
                     href={website}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
+                    title="Website"
                   >
                     <Website className={scss.icon} />
                   </a>
@@ -283,6 +377,7 @@ const Projects = () => {
                   href={code}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
+                  title="Code"
                 >
                   <Code className={scss.icon} />
                 </a>
@@ -291,6 +386,7 @@ const Projects = () => {
                     href="https://github.com/benbrzezinski/Goit-Wallet-DB"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
+                    title="Database"
                   >
                     <Database className={scss.icon} />
                   </a>
