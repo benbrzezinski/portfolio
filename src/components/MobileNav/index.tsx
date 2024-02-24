@@ -15,7 +15,7 @@ const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavTypes) => {
       <button className={scss.btn} type="button" onClick={closeMobileNav}>
         <Close className={scss.icon} />
       </button>
-      <nav>
+      <nav className={scss.mobileNav}>
         <ul className={scss.navList}>
           <li className={scss.navItem}>
             <Link

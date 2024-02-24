@@ -60,12 +60,12 @@ const Projects = () => {
       navigator.clipboard
         .writeText(`${email} ${password}`)
         .then(() =>
-          toast.success("Details copied to the clipboard", {
+          toast.success("Login details copied", {
             toastId: ID.current.toast_success,
           })
         )
         .catch(() =>
-          toast.error("Failed to copy to the clipboard", {
+          toast.error("Failed to copy login details", {
             toastId: ID.current.toast_error,
           })
         );

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
@@ -64,6 +64,7 @@ const Home = () => {
       <ToastContainer
         bodyStyle={{ lineHeight: 1.4 }}
         draggablePercent={50}
+        transition={Slide}
         closeOnClick
       />
     </>

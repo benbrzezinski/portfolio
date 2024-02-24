@@ -53,14 +53,19 @@ div.wrapper {
 }
 
 .navLink {
+  --fs: 18px;
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
-  font-size: 18px;
+  font-size: var(--fs);
   color: var(--cl-main);
   cursor: pointer;
-  transition-property: color;
+  transition-property: color, font-size;
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);
+
+  &.active {
+    font-size: calc(var(--fs) + 2px);
+  }
 
   &:hover,
   &:focus-visible,

@@ -21,6 +21,13 @@
   }
 }
 
+.mobileNav {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+}
+
 .navList {
   display: flex;
   flex-direction: column;
@@ -30,14 +37,19 @@
 }
 
 .navLink {
+  --fs: clamp(1rem, 0.1667rem + 4.1667vw, 2.25rem);
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
-  font-size: clamp(1rem, 0.1667rem + 4.1667vw, 2.25rem);
+  font-size: var(--fs);
   color: var(--cl-main);
   cursor: pointer;
-  transition-property: color;
+  transition-property: color, font-size;
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);
+
+  &.active {
+    font-size: calc(var(--fs) + 2px);
+  }
 
   &:hover,
   &:focus-visible,

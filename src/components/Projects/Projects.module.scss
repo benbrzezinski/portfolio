@@ -158,5 +158,6 @@
   &:hover,
   &:focus-visible {
     color: var(--cl-sec);
+    animation: pulsate-bck 0.5s ease-in-out both;
   }
 }
