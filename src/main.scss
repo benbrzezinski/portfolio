@@ -1,7 +1,7 @@
 @use "./scss/index.scss" as *;
 @import "../node_modules/modern-normalize/modern-normalize.css";
 @import "aos/dist/aos.css";
-@import "react-toastify/dist/ReactToastify.css";
+@import "react-toastify/dist/ReactToastify.min.css";
 @import "react-responsive-carousel/lib/styles/carousel.min.css";
 @import "yet-another-react-lightbox/styles.css";
 @import "yet-another-react-lightbox/plugins/counter.css";

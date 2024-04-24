@@ -1,0 +1,23 @@
+@use "../../scss/index.scss" as *;
+
+.toolsBox {
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: var(--cl-main);
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+    animation: pulsate-bck 0.5s ease-in-out both;
+  }
+}

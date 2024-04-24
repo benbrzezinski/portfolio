@@ -23,6 +23,16 @@ const projects = [
   },
   {
     id: nanoid(),
+    subtitle: "Love Matching Game",
+    name: "Love Matcher",
+    description:
+      "Love Matcher is your essential companion for exploring the depths of your relationship. Simply enter your details and watch as our advanced algorithms analyze your compatibility in real-time. Discover new insights, strengthen your bond, all at your fingertips. Start exploring your love compatibility today",
+    screenshots: ["/assets/images/love-matcher.jpg"],
+    website: "https://love-matcher-game.netlify.app",
+    code: "https://github.com/benbrzezinski/love-matcher",
+  },
+  {
+    id: nanoid(),
     subtitle: "Ice Cream Shop",
     name: "Ice Cream",
     description:

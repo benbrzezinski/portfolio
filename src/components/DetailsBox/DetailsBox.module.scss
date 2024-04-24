@@ -1,0 +1,103 @@
+@use "../../scss/index.scss" as *;
+
+.detailsBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  @extend %glass;
+  border-radius: var(--br-main) 0 var(--br-main) 0;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+  transition-property: transform;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  @include max-width(400px) {
+    right: 0;
+    border-radius: var(--br-main);
+  }
+
+  &.up {
+    transform: translateY(-100%);
+  }
+}
+
+.detailsTitle {
+  font-weight: var(--fw-sec);
+  font-size: clamp(0.875rem, 0.625rem + 1.25vw, 1.25rem);
+  margin-bottom: 8px;
+}
+
+.detailsText {
+  font-size: clamp(0.875rem, 0.7083rem + 0.8333vw, 1.125rem);
+}
+
+.notifyBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: var(--cl-main);
+  @extend %glass;
+  border-radius: var(--br-main) 0 var(--br-main) 0;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+  padding: 10px;
+  transition-property: color, transform;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+  }
+
+  &.left {
+    transform: translateX(-100%);
+  }
+}
+
+.notify {
+  width: 30px;
+  height: 30px;
+  color: inherit;
+  animation: wobble-hor-top 1.5s infinite both;
+}
+
+.screenshot {
+  width: 600px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--br-main);
+}
+
+.linkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: var(--cl-main);
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-sec);
+    animation: pulsate-bck 0.5s ease-in-out both;
+  }
+}

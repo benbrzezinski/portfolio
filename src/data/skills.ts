@@ -1,8 +1,16 @@
 const skills = {
   frontend: [
     {
+      icon: "nextjs",
+      text: "NextJS",
+    },
+    {
       icon: "vite",
       text: "Vite",
+    },
+    {
+      icon: "vitest",
+      text: "Vitest",
     },
     {
       icon: "html",
@@ -17,12 +25,16 @@ const skills = {
       text: "SCSS",
     },
     {
+      icon: "tailwindcss",
+      text: "TailwindCSS",
+    },
+    {
       icon: "js",
-      text: "Javascript",
+      text: "JavaScript",
     },
     {
       icon: "ts",
-      text: "Typescript",
+      text: "TypeScript",
     },
     {
       icon: "react",

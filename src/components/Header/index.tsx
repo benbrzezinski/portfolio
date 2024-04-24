@@ -1,10 +1,13 @@
 import { Link } from "react-scroll";
 import { useMediaQuery } from "react-responsive";
-import { HeaderTypes } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Header.module.scss";
 
-const Header = ({ openMobileNav }: HeaderTypes) => {
+interface HeaderProps {
+  openMobileNav: () => void;
+}
+
+const Header = ({ openMobileNav }: HeaderProps) => {
   const { Hamburger } = useIcons();
   const isMobileScreen = useMediaQuery({ query: "(max-width: 900px)" });
 

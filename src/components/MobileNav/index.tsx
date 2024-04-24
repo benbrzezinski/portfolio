@@ -1,9 +1,13 @@
 import { Link } from "react-scroll";
-import { MobileNavTypes } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./MobileNav.module.scss";
 
-const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavTypes) => {
+interface MobileNavProps {
+  isMobileNavOpen: boolean;
+  closeMobileNav: () => void;
+}
+
+const MobileNav = ({ isMobileNavOpen, closeMobileNav }: MobileNavProps) => {
   const { Close, GitHub, LinkedIn } = useIcons();
 
   return (

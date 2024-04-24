@@ -26,6 +26,9 @@ import {
   SiSwagger,
   SiExpo,
   SiFirebase,
+  SiNextdotjs,
+  SiVitest,
+  SiTailwindcss,
 } from "react-icons/si";
 import { TbBrandReactNative, TbLoader2 } from "react-icons/tb";
 import { MdNotificationImportant } from "react-icons/md";
@@ -206,6 +209,24 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const NextJs = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiNextdotjs />
+    </IconContext.Provider>
+  );
+
+  const Vitest = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiVitest />
+    </IconContext.Provider>
+  );
+
+  const TailwindCSS = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiTailwindcss />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -236,6 +257,9 @@ const useIcons = () => {
     Facebook,
     NotificationImportant,
     Copy,
+    NextJs,
+    Vitest,
+    TailwindCSS,
   };
 };
 

@@ -1,0 +1,28 @@
+.projectInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 50px;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.subtitle {
+  font-family: var(--ff-sec);
+  color: var(--cl-sec);
+}
+
+.name {
+  width: fit-content;
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  color: var(--cl-main);
+}
+
+.description {
+  font-size: clamp(0.875rem, 0.7917rem + 0.4167vw, 1rem);
+}

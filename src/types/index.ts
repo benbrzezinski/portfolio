@@ -1,13 +1,4 @@
-export interface HeaderTypes {
-  openMobileNav: () => void;
-}
-
-export interface MobileNavTypes {
-  isMobileNavOpen: boolean;
-  closeMobileNav: () => void;
-}
-
-export interface RoutesTypes {
+export interface RouteProps {
   redirectTo: string;
   component: React.JSX.Element;
 }
