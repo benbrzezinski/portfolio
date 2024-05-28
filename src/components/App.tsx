@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
 import RestrictedRoute from "./RestrictedRoute";
 
@@ -18,6 +18,7 @@ const App = () => {
           path="/success"
           element={<RestrictedRoute redirectTo="/" component={<Success />} />}
         />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Suspense>
   );

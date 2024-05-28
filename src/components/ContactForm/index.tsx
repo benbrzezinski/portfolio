@@ -2,8 +2,7 @@ import { ChangeEventHandler, FormEventHandler, useState, useRef } from "react";
 import { sendForm } from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
-import { useDispatch } from "react-redux";
-import { setIsUserAllowed } from "../../redux/authSlice";
+import useAuth from "../../hooks/useAuth";
 import useInputFocused from "../../hooks/useInputFocused";
 import useIcons from "../../hooks/useIcons";
 import scss from "./ContactForm.module.scss";
@@ -33,9 +32,9 @@ const ContactForm = () => {
     handleFocus,
     labelStyles,
   } = useInputFocused();
+  const { toggleIsUserAllowed } = useAuth();
   const { Loader } = useIcons();
   const formRef = useRef<HTMLFormElement>(null);
-  const dispatch = useDispatch();
 
   const canBeSent = nameError || emailError || messageError ? true : false;
 
@@ -61,7 +60,7 @@ const ContactForm = () => {
           );
 
           if (res.status === 200) {
-            dispatch(setIsUserAllowed());
+            toggleIsUserAllowed();
           } else {
             toast.error("Something went wrong, please try again later", {
               toastId: ID.current.toast_res_error,

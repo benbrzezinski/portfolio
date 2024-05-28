@@ -6,6 +6,7 @@
   background-color: transparent;
   border: 1px solid var(--cl-sec);
   border-radius: var(--br-main);
+  user-select: none;
   transition-property: color, background-color;
   transition-duration: var(--duration);
   transition-timing-function: var(--timing-function);

@@ -88,6 +88,14 @@ const skills = {
       icon: "react-native",
       text: "React Native",
     },
+    {
+      icon: "dart",
+      text: "Dart",
+    },
+    {
+      icon: "flutter",
+      text: "Flutter",
+    },
   ],
 };
 
