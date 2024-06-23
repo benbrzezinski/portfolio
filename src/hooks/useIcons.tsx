@@ -29,6 +29,7 @@ import {
   SiNextdotjs,
   SiVitest,
   SiTailwindcss,
+  SiShadcnui,
 } from "react-icons/si";
 import { TbBrandReactNative, TbLoader2 } from "react-icons/tb";
 import { MdNotificationImportant } from "react-icons/md";
@@ -227,6 +228,12 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Shadcnui = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <SiShadcnui />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -260,6 +267,7 @@ const useIcons = () => {
     NextJs,
     Vitest,
     TailwindCSS,
+    Shadcnui,
   };
 };
 

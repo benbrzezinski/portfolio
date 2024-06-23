@@ -26,6 +26,7 @@ const ToolsBox = ({ name }: ToolsBoxProps) => {
     NextJs,
     Vitest,
     TailwindCSS,
+    Shadcnui,
   } = useIcons();
 
   return (
@@ -143,7 +144,7 @@ const ToolsBox = ({ name }: ToolsBoxProps) => {
           </a>
         </>
       )}
-      {name === "Love Matcher" && (
+      {(name === "Love Matcher" || name === "Bettors Bombardment") && (
         <>
           <a
             href="https://nextjs.org"
@@ -159,13 +160,23 @@ const ToolsBox = ({ name }: ToolsBoxProps) => {
           >
             <Typescript className={scss.icon} />
           </a>
-          <a
-            href="https://vitest.dev"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            <Vitest className={scss.icon} />
-          </a>
+          {name === "Love Matcher" ? (
+            <a
+              href="https://vitest.dev"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <Vitest className={scss.icon} />
+            </a>
+          ) : (
+            <a
+              href="https://ui.shadcn.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <Shadcnui className={scss.icon} />
+            </a>
+          )}
           <a
             href="https://tailwindcss.com"
             target="_blank"
@@ -175,7 +186,9 @@ const ToolsBox = ({ name }: ToolsBoxProps) => {
           </a>
         </>
       )}
-      {name === "Ice Cream" || name === "Filmoteka" || name === "WebStudio" ? (
+      {(name === "Ice Cream" ||
+        name === "Filmoteka" ||
+        name === "WebStudio") && (
         <>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -199,7 +212,7 @@ const ToolsBox = ({ name }: ToolsBoxProps) => {
             <Sass className={scss.icon} />
           </a>
         </>
-      ) : null}
+      )}
       {name === "Posts" && (
         <>
           <a

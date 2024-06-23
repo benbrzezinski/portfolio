@@ -1,6 +1,16 @@
 import { nanoid } from "nanoid";
 
-const projects = [
+interface Project {
+  id: string;
+  subtitle: string;
+  name: string;
+  description: string;
+  screenshots: string[];
+  website: string;
+  code: string;
+}
+
+const projects: Project[] = [
   {
     id: nanoid(),
     subtitle: "Jewellery Shop",
@@ -20,6 +30,16 @@ const projects = [
     screenshots: ["/assets/images/wallet.jpg"],
     website: "https://mateuszcharysz.github.io/Goit-Wallet/",
     code: "https://github.com/MateuszCharysz/Goit-Wallet",
+  },
+  {
+    id: nanoid(),
+    subtitle: "Betting Game",
+    name: "Bettors Bombardment",
+    description:
+      "Dive into the thrilling world of Bettors Bombardment, where strategy and luck collide! The aim of the game is to increase your balance by placing bets and clicking on hidden fields that trigger various effects. But beware, you won't know what surprises await you behind each field. The player who skillfully navigates these challenges and maintains the highest balance wins. Be cautious, though—if your balance drops to zero, you're out of the game. Test your wits and luck in Bettors Bombardment!",
+    screenshots: ["/assets/images/bettors-bombardment.jpg"],
+    website: "https://bettors-bombardment.netlify.app",
+    code: "https://github.com/benbrzezinski/bettors-bombardment",
   },
   {
     id: nanoid(),
