@@ -4,63 +4,10 @@
   width: 100%;
   min-height: 100dvh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 100px;
 
   @include max-width(1120px) {
     flex-direction: column;
   }
-}
-
-.titleBox {
-  max-width: 470px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  @include max-width(1120px) {
-    align-items: center;
-  }
-}
-
-.title {
-  font-weight: var(--fw-sec);
-  font-size: clamp(1.875rem, 1.0417rem + 4.1667vw, 3.125rem);
-  line-height: 1.4;
-
-  @include max-width(1120px) {
-    text-align: center;
-  }
-}
-
-.text {
-  font-size: clamp(0.875rem, 0.7917rem + 0.4167vw, 1rem);
-
-  @include max-width(1120px) {
-    text-align: center;
-  }
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  @extend %btn;
-}
-
-.icon {
-  width: 26px;
-  height: 26px;
-}
-
-.profileImg {
-  width: 500px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: 50% 42%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }

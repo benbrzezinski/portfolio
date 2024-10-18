@@ -1,0 +1,43 @@
+@use "../../scss/index.scss" as *;
+
+.titleBox {
+  max-width: 470px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include max-width(1120px) {
+    align-items: center;
+  }
+}
+
+.title {
+  font-weight: var(--fw-sec);
+  font-size: clamp(1.875rem, 1.0417rem + 4.1667vw, 3.125rem);
+  line-height: 1.4;
+
+  @include max-width(1120px) {
+    text-align: center;
+  }
+}
+
+.text {
+  font-size: clamp(0.875rem, 0.7917rem + 0.4167vw, 1rem);
+
+  @include max-width(1120px) {
+    text-align: center;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  @extend %btn;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+}

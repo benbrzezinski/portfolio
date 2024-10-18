@@ -28,4 +28,12 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      files: ["src/components/Cube/*.tsx"],
+      rules: {
+        "react/no-unknown-property": "off",
+      },
+    },
+  ],
 };
