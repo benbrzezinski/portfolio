@@ -5,10 +5,14 @@
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 200px;
 
-  @include max-width(1120px) {
+  @include max-width(1250px) {
     flex-direction: column;
+  }
+
+  @include min-max-width(1251px, 1600px) {
+    gap: 100px;
   }
 }
 
@@ -18,7 +22,7 @@
   display: grid;
   place-items: center;
 
-  @include max-width(1120px) {
+  @include max-width(1250px) {
     padding-top: 150px;
   }
 }

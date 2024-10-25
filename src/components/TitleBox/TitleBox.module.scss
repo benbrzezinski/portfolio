@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 10px;
 
-  @include max-width(1120px) {
+  @include max-width(1250px) {
     align-items: center;
   }
 }
@@ -16,7 +16,7 @@
   font-size: clamp(1.875rem, 1.0417rem + 4.1667vw, 3.125rem);
   line-height: 1.4;
 
-  @include max-width(1120px) {
+  @include max-width(1250px) {
     text-align: center;
   }
 }
@@ -24,7 +24,7 @@
 .text {
   font-size: clamp(0.875rem, 0.7917rem + 0.4167vw, 1rem);
 
-  @include max-width(1120px) {
+  @include max-width(1250px) {
     text-align: center;
   }
 }
