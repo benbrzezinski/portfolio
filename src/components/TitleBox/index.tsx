@@ -25,6 +25,7 @@ const TitleBox = () => {
           className={scss.title}
           ref={titleRef}
           sequence={[
+            250,
             "Hello! I'm Beniamin, front-end developer",
             1000,
             "Hello! I'm Beniamin, web developer",

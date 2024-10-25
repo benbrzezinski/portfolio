@@ -11,3 +11,26 @@
     flex-direction: column;
   }
 }
+
+.fallbackWrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  @include max-width(1120px) {
+    padding-top: 150px;
+  }
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  color: var(--cl-sec);
+  animation: loading 0.8s linear infinite;
+
+  @include max-width(500px) {
+    width: 75px;
+    height: 75px;
+  }
+}

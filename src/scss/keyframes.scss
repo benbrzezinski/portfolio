@@ -42,18 +42,15 @@
 
 @keyframes loading {
   0% {
-    rotate: 0deg;
-    scale: 1;
+    transform: rotate(0deg) scale(1);
   }
 
   50% {
-    rotate: 180deg;
-    scale: 1.2;
+    transform: rotate(180deg) scale(1.2);
   }
 
   100% {
-    rotate: 360deg;
-    scale: 1;
+    transform: rotate(360deg) scale(1);
   }
 }
 
