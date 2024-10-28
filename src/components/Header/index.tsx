@@ -21,7 +21,7 @@ const Header = ({ openMobileNav }: HeaderProps) => {
         >
           <img
             className={scss.logoImg}
-            src="/assets/images/logo-big.jpg"
+            src="/assets/images/logo-header.jpg"
             alt="Logo"
             loading="lazy"
           />
