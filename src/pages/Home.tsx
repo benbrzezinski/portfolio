@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer, Slide } from "react-toastify";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
 import Header from "../components/Header";
@@ -25,20 +24,12 @@ const Home = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (!isMobileScreen) {
-      enableBodyScroll(document.body);
-    }
-  }, [isMobileScreen]);
-
   const openMobileNav = () => {
     setIsMobileNavOpen(true);
-    disableBodyScroll(document.body);
   };
 
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
-    enableBodyScroll(document.body);
   };
 
   return (
