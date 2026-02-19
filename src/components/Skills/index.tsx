@@ -17,8 +17,10 @@ const Skills = () => {
           {skills.frontend.map(({ icon, text }) => (
             <li key={nanoid()}>
               <figure className={scss.figure}>
+                {icon === "nextjs" && <div className={scss.box2}></div>}
                 <img
                   src={`/assets/svgs/${icon}.svg`}
+                  className={scss.img}
                   width={50}
                   height={50}
                   alt={`${text} icon`}
@@ -36,8 +38,10 @@ const Skills = () => {
           {skills.backend.map(({ icon, text }) => (
             <li key={nanoid()}>
               <figure className={scss.figure}>
+                {icon === "express" && <div className={scss.box}></div>}
                 <img
                   src={`/assets/svgs/${icon}.svg`}
+                  className={scss.img}
                   width={50}
                   height={50}
                   alt={`${text} icon`}
@@ -61,6 +65,7 @@ const Skills = () => {
               <figure className={scss.figure}>
                 <img
                   src={`/assets/svgs/${icon}.svg`}
+                  className={scss.img}
                   width={50}
                   height={50}
                   alt={`${text} icon`}

@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.12.1",
+    "@emailjs/browser": "^4.4.1",
     "@react-three/fiber": "^8.17.8",
     "@types/three": "^0.169.0",
     "aos": "^2.3.4",

@@ -36,7 +36,7 @@ const ContactForm = () => {
   const { Loader } = useIcons();
   const formRef = useRef<HTMLFormElement>(null);
 
-  const canBeSent = nameError || emailError || messageError ? true : false;
+  const canBeSent = !nameError && !emailError && !messageError;
 
   const handleChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
@@ -47,6 +47,7 @@ const ContactForm = () => {
 
   const sendEmail: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
+    if (!canBeSent) return;
     setLoading(true);
 
     void (async () => {
@@ -56,7 +57,7 @@ const ContactForm = () => {
             "service_n4rgv7r",
             "template_sn9ae24",
             formRef.current,
-            "mvBFayLSbELUYNofS"
+            "mvBFayLSbELUYNofS",
           );
 
           if (res.status === 200) {
@@ -158,7 +159,7 @@ const ContactForm = () => {
         <button
           type="submit"
           className={scss.btn}
-          style={{ pointerEvents: canBeSent ? "none" : "all" }}
+          style={{ pointerEvents: canBeSent ? "all" : "none" }}
         >
           {loading ? <Loader className={scss.loader} /> : "Send"}
         </button>
