@@ -22,6 +22,7 @@ const Skills = () => {
                   width={50}
                   height={50}
                   alt={`${text} icon`}
+                  loading="lazy"
                 />
                 <figcaption>{text}</figcaption>
               </figure>
@@ -40,6 +41,7 @@ const Skills = () => {
                   width={50}
                   height={50}
                   alt={`${text} icon`}
+                  loading="lazy"
                 />
                 <figcaption>{text}</figcaption>
               </figure>
@@ -62,6 +64,7 @@ const Skills = () => {
                   width={50}
                   height={50}
                   alt={`${text} icon`}
+                  loading="lazy"
                 />
                 <figcaption>{text}</figcaption>
               </figure>
