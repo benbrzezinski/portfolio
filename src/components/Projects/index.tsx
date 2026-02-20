@@ -5,7 +5,7 @@ import projects from "../../data/projects";
 import scss from "./Projects.module.scss";
 
 const Projects = () => {
-  const isMobileScreen = useMediaQuery({ query: "(max-width: 1024px)" });
+  const isMobileScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <div className={`container ${scss.wrapper}`} id="projects">
@@ -20,13 +20,7 @@ const Projects = () => {
           <div
             className={scss.project}
             key={id}
-            data-aos={
-              isMobileScreen
-                ? "fade-up"
-                : i % 2 === 0
-                  ? "fade-up-right"
-                  : "fade-up-left"
-            }
+            data-aos={i % 2 === 0 ? "fade-up-right" : "fade-up-left"}
           >
             <ProjectInfo
               subtitle={subtitle}

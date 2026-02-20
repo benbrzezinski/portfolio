@@ -11,7 +11,7 @@ const Success = () => {
       <div
         className="container"
         style={{
-          height: "100dvh",
+          minHeight: "100dvh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

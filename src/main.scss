@@ -13,6 +13,7 @@
   padding-block: 200px;
   padding-inline: 50px;
   margin-inline: auto;
+  overflow-x: hidden;
 
   @include max-width(768px) {
     padding-block: 120px;
@@ -30,6 +31,7 @@
 }
 
 body {
+  width: 100%;
   font-family:
     var(--ff-main), "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -39,7 +41,14 @@ body {
   line-height: var(--lh-main);
   font-weight: var(--fw-main);
   color: var(--cl-main);
-  background-image: linear-gradient(-45deg, #321520, #2f141e, #171f31, #141c2e);
+  background-color: var(--bg-main);
+  background-image: linear-gradient(
+    -45deg,
+    var(--gradient-accent),
+    var(--gradient),
+    var(--bg-main),
+    var(--bg-main)
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   overflow-x: hidden;
